@@ -76,13 +76,17 @@ Public Class Form1
             ' Comparer les numéros de version
             If String.Compare(gameVersion, installedVersion) > 0 Then
                 ' Afficher un message si la version du jeu est supérieure à la version installée
-                MsgBox("La version du jeu est supérieure à la version installée.")
+                GameInstall.Visible = False
+                GamePlay.Visible = True
             ElseIf String.Compare(gameVersion, installedVersion) < 0 Then
                 ' Afficher un message si la version du jeu est inférieure à la version installée
-                MsgBox("La version du jeu est inférieure à la version installée.")
+                Label2.Visible = True
+                GameInstall.Visible = True
+                GamePlay.Visible = False
             Else
                 ' Afficher un message si la version du jeu est égale à la version installée
-                MsgBox("La version du jeu est égale à la version installée.")
+                GameInstall.Visible = False
+                GamePlay.Visible = True
             End If
         Else
             ' Afficher un message si les fichiers de version sont introuvables
@@ -101,4 +105,6 @@ Public Class Form1
         Settings.Visible = True ' Afficher le panneau des paramètres
         Game.Visible = False ' Masquer le panneau du jeu
     End Sub
+
+
 End Class

@@ -23,15 +23,19 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
         Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(components)
         Panel2 = New Panel()
         Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
@@ -42,10 +46,18 @@ Partial Class Form1
         Label1 = New Label()
         Settings = New Panel()
         Game = New Panel()
-        Panel1 = New Panel()
+        GamePlay = New Panel()
+        Guna2GradientButton2 = New Guna.UI2.WinForms.Guna2GradientButton()
+        Label4 = New Label()
+        Label3 = New Label()
+        GameInstall = New Panel()
+        Label2 = New Label()
+        Guna2GradientButton1 = New Guna.UI2.WinForms.Guna2GradientButton()
         Panel2.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Game.SuspendLayout()
+        GamePlay.SuspendLayout()
+        GameInstall.SuspendLayout()
         SuspendLayout()
         ' 
         ' Guna2BorderlessForm1
@@ -67,7 +79,7 @@ Partial Class Form1
         ' 
         ' Guna2Button4
         ' 
-        Guna2Button4.CustomizableEdges = CustomizableEdges5
+        Guna2Button4.CustomizableEdges = CustomizableEdges9
         Guna2Button4.DisabledState.BorderColor = Color.DarkGray
         Guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button4.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -80,7 +92,7 @@ Partial Class Form1
         Guna2Button4.ImageSize = New Size(25, 25)
         Guna2Button4.Location = New Point(0, 500)
         Guna2Button4.Name = "Guna2Button4"
-        Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         Guna2Button4.Size = New Size(281, 56)
         Guna2Button4.TabIndex = 17
         Guna2Button4.Text = "Settings"
@@ -88,7 +100,7 @@ Partial Class Form1
         ' 
         ' Guna2Button3
         ' 
-        Guna2Button3.CustomizableEdges = CustomizableEdges7
+        Guna2Button3.CustomizableEdges = CustomizableEdges11
         Guna2Button3.DisabledState.BorderColor = Color.DarkGray
         Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -102,7 +114,7 @@ Partial Class Form1
         Guna2Button3.ImageSize = New Size(25, 25)
         Guna2Button3.Location = New Point(0, 0)
         Guna2Button3.Name = "Guna2Button3"
-        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges12
         Guna2Button3.Size = New Size(281, 56)
         Guna2Button3.TabIndex = 0
         Guna2Button3.Text = "Super Jeux"
@@ -123,7 +135,7 @@ Partial Class Form1
         ' 
         Guna2Button2.BackColor = Color.Transparent
         Guna2Button2.BorderRadius = 5
-        Guna2Button2.CustomizableEdges = CustomizableEdges1
+        Guna2Button2.CustomizableEdges = CustomizableEdges5
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -136,7 +148,7 @@ Partial Class Form1
         Guna2Button2.Location = New Point(921, 12)
         Guna2Button2.Name = "Guna2Button2"
         Guna2Button2.PressedColor = Color.FromArgb(CByte(255), CByte(128), CByte(128))
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         Guna2Button2.Size = New Size(40, 30)
         Guna2Button2.TabIndex = 14
         ' 
@@ -145,7 +157,7 @@ Partial Class Form1
         Guna2Button1.BackColor = Color.Transparent
         Guna2Button1.BorderColor = Color.Transparent
         Guna2Button1.BorderRadius = 5
-        Guna2Button1.CustomizableEdges = CustomizableEdges3
+        Guna2Button1.CustomizableEdges = CustomizableEdges7
         Guna2Button1.DisabledState.BorderColor = Color.DarkGray
         Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -158,7 +170,7 @@ Partial Class Form1
         Guna2Button1.Location = New Point(967, 12)
         Guna2Button1.Name = "Guna2Button1"
         Guna2Button1.PressedColor = Color.FromArgb(CByte(255), CByte(128), CByte(128))
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2Button1.Size = New Size(50, 30)
         Guna2Button1.TabIndex = 13
         ' 
@@ -185,19 +197,121 @@ Partial Class Form1
         ' 
         Game.BackgroundImage = CType(resources.GetObject("Game.BackgroundImage"), Image)
         Game.BackgroundImageLayout = ImageLayout.Stretch
-        Game.Controls.Add(Panel1)
+        Game.Controls.Add(GamePlay)
+        Game.Controls.Add(Label4)
+        Game.Controls.Add(Label3)
+        Game.Controls.Add(GameInstall)
         Game.Location = New Point(275, 58)
         Game.Name = "Game"
         Game.Size = New Size(765, 556)
         Game.TabIndex = 17
         Game.Visible = False
         ' 
-        ' Panel1
+        ' GamePlay
         ' 
-        Panel1.Location = New Point(351, 418)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(361, 98)
-        Panel1.TabIndex = 0
+        GamePlay.BackColor = Color.Transparent
+        GamePlay.Controls.Add(Guna2GradientButton2)
+        GamePlay.Location = New Point(131, 374)
+        GamePlay.Name = "GamePlay"
+        GamePlay.Size = New Size(479, 152)
+        GamePlay.TabIndex = 2
+        GamePlay.Visible = False
+        ' 
+        ' Guna2GradientButton2
+        ' 
+        Guna2GradientButton2.Animated = True
+        Guna2GradientButton2.BorderRadius = 10
+        Guna2GradientButton2.CustomizableEdges = CustomizableEdges1
+        Guna2GradientButton2.DisabledState.BorderColor = Color.DarkGray
+        Guna2GradientButton2.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2GradientButton2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2GradientButton2.DisabledState.FillColor2 = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2GradientButton2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2GradientButton2.FillColor = Color.FromArgb(CByte(111), CByte(214), CByte(29))
+        Guna2GradientButton2.FillColor2 = Color.FromArgb(CByte(25), CByte(177), CByte(78))
+        Guna2GradientButton2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Guna2GradientButton2.ForeColor = Color.White
+        Guna2GradientButton2.Image = CType(resources.GetObject("Guna2GradientButton2.Image"), Image)
+        Guna2GradientButton2.ImageOffset = New Point(3, 0)
+        Guna2GradientButton2.ImageSize = New Size(30, 30)
+        Guna2GradientButton2.Location = New Point(207, 76)
+        Guna2GradientButton2.Name = "Guna2GradientButton2"
+        Guna2GradientButton2.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2GradientButton2.Size = New Size(269, 70)
+        Guna2GradientButton2.TabIndex = 0
+        Guna2GradientButton2.Text = "Télécharger "
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
+        Label4.ForeColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
+        Label4.ImageAlign = ContentAlignment.TopLeft
+        Label4.Location = New Point(31, 101)
+        Label4.MaximumSize = New Size(580, 150)
+        Label4.Name = "Label4"
+        Label4.RightToLeft = RightToLeft.No
+        Label4.Size = New Size(579, 150)
+        Label4.TabIndex = 2
+        Label4.Text = resources.GetString("Label4.Text")
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Segoe UI Black", 36F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.ForeColor = Color.White
+        Label3.Location = New Point(22, 20)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(376, 81)
+        Label3.TabIndex = 1
+        Label3.Text = "SUPERJEUX"
+        ' 
+        ' GameInstall
+        ' 
+        GameInstall.BackColor = Color.Transparent
+        GameInstall.Controls.Add(Label2)
+        GameInstall.Controls.Add(Guna2GradientButton1)
+        GameInstall.Location = New Point(455, 374)
+        GameInstall.Name = "GameInstall"
+        GameInstall.Size = New Size(272, 152)
+        GameInstall.TabIndex = 0
+        GameInstall.Visible = False
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.ForeColor = Color.White
+        Label2.Location = New Point(3, 53)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(269, 20)
+        Label2.TabIndex = 1
+        Label2.Text = "Your needs an update to play the game"
+        Label2.Visible = False
+        ' 
+        ' Guna2GradientButton1
+        ' 
+        Guna2GradientButton1.Animated = True
+        Guna2GradientButton1.BorderRadius = 10
+        Guna2GradientButton1.CustomizableEdges = CustomizableEdges3
+        Guna2GradientButton1.DisabledState.BorderColor = Color.DarkGray
+        Guna2GradientButton1.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2GradientButton1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2GradientButton1.DisabledState.FillColor2 = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2GradientButton1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2GradientButton1.FillColor = Color.FromArgb(CByte(111), CByte(214), CByte(29))
+        Guna2GradientButton1.FillColor2 = Color.FromArgb(CByte(25), CByte(177), CByte(78))
+        Guna2GradientButton1.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Guna2GradientButton1.ForeColor = Color.White
+        Guna2GradientButton1.Image = CType(resources.GetObject("Guna2GradientButton1.Image"), Image)
+        Guna2GradientButton1.ImageOffset = New Point(3, 0)
+        Guna2GradientButton1.ImageSize = New Size(30, 30)
+        Guna2GradientButton1.Location = New Point(3, 76)
+        Guna2GradientButton1.Name = "Guna2GradientButton1"
+        Guna2GradientButton1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2GradientButton1.Size = New Size(269, 70)
+        Guna2GradientButton1.TabIndex = 0
+        Guna2GradientButton1.Text = "Télécharger "
         ' 
         ' Form1
         ' 
@@ -218,6 +332,10 @@ Partial Class Form1
         Panel2.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Game.ResumeLayout(False)
+        Game.PerformLayout()
+        GamePlay.ResumeLayout(False)
+        GameInstall.ResumeLayout(False)
+        GameInstall.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -232,5 +350,11 @@ Partial Class Form1
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Settings As Panel
     Friend WithEvents Game As Panel
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents GameInstall As Panel
+    Friend WithEvents Guna2GradientButton1 As Guna.UI2.WinForms.Guna2GradientButton
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents GamePlay As Panel
+    Friend WithEvents Guna2GradientButton2 As Guna.UI2.WinForms.Guna2GradientButton
 End Class
