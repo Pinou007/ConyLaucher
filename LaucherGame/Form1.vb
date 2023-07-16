@@ -9,6 +9,7 @@ Imports Microsoft.Win32
 Imports System.Runtime.InteropServices
 Imports System.Diagnostics.Metrics
 Imports System.Net
+Imports System.Security.Policy
 
 Public Class Form1
 
@@ -60,10 +61,10 @@ Public Class Form1
 
 
         ' Chemin du fichier contenant la version du jeu
-        Dim gameVersionFile As String = Path.Combine(Application.StartupPath, "laucher\project-spike\info\game_version.cony")
+        Dim gameVersionFile As String = Path.Combine(Application.StartupPath, "laucher\project-spike\info\game_version_install.cony")
 
         ' Chemin du fichier contenant la version installée du jeu
-        Dim installedVersionFile As String = Path.Combine(Application.StartupPath, "laucher\project-spike\info\game_version_install.cony")
+        Dim installedVersionFile As String = Path.Combine(Application.StartupPath, "laucher\project-spike\info\game_version.cony")
 
         ' Vérifier si les fichiers de version existent
         If File.Exists(gameVersionFile) AndAlso File.Exists(installedVersionFile) Then
@@ -78,15 +79,18 @@ Public Class Form1
                 ' Afficher un message si la version du jeu est supérieure à la version installée
                 GameInstall.Visible = False
                 GamePlay.Visible = True
+                MsgBox("Up")
             ElseIf String.Compare(gameVersion, installedVersion) < 0 Then
                 ' Afficher un message si la version du jeu est inférieure à la version installée
                 Label2.Visible = True
                 GameInstall.Visible = True
                 GamePlay.Visible = False
+                MsgBox("Dow")
             Else
                 ' Afficher un message si la version du jeu est égale à la version installée
                 GameInstall.Visible = False
                 GamePlay.Visible = True
+                MsgBox("Up")
             End If
         Else
             ' Afficher un message si les fichiers de version sont introuvables
@@ -106,5 +110,42 @@ Public Class Form1
         Game.Visible = False ' Masquer le panneau du jeu
     End Sub
 
+    Private Sub Guna2GradientButton3_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton3.Click
 
+        GamePlay.Visible = False
+        ' Obtient le chemin complet du dossier de démarrage de l'application
+        Dim startupPath As String = Application.StartupPath
+
+        ' Chemin du dossier à supprimer
+        Dim folderPath As String = Path.Combine(startupPath, "game\projects_spike\")
+
+        ' Vérifie si le dossier existe
+        If Directory.Exists(folderPath) Then
+            ' Supprime tous les sous-dossiers et fichiers récursivement
+            Directory.Delete(folderPath, True)
+        End If
+
+        Directory.CreateDirectory(Application.StartupPath + "game\projects_spike\")
+        File.Delete(Application.StartupPath + "laucher\project-spike\info\game_version_install.cony")
+        File.Create(Application.StartupPath + "laucher\project-spike\info\game_version_install.cony")
+        GameInstall.Visible = True
+
+    End Sub
+
+    Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
+        Panel2.Visible = False
+        GamePlay.Visible = False
+        GameInstall.Visible = False
+        Download.Visible = True
+
+
+
+
+
+
+
+
+
+
+    End Sub
 End Class
