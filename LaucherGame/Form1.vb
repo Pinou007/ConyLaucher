@@ -16,6 +16,9 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Code exécuté lors du chargement du formulaire
 
+        ' Chargement des images
+        PictureBox3.Image = New Bitmap(Application.StartupPath & "\laucher\cony-launcher\icon\dark\joypad.png")
+
 
         Dim filePath As String = Application.StartupPath & "\laucher\cony-launcher\setting\theme.cony"
 
