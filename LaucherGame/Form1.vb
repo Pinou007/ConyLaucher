@@ -15,6 +15,48 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Code exécuté lors du chargement du formulaire
+
+
+        Dim filePath As String = Application.StartupPath & "\laucher\cony-launcher\setting\theme.cony"
+
+        ' Vérifier si le fichier existe
+        If File.Exists(filePath) Then
+            ' Lire le contenu du fichier
+            Dim content As String = File.ReadAllText(filePath)
+
+            ' Vérifier si le contenu contient le mot "Dark"
+            If content.Contains("Dark") Then
+                ' Le fichier contient "Dark"
+                Guna2ComboBox1.StartIndex = 1
+
+            ElseIf content.Contains("Red") Then
+                ' Le fichier contient "Red"
+                Panel2.BackColor = Color.FromArgb(88, 8, 8)
+                Me.BackColor = Color.FromArgb(71, 6, 6)
+                Guna2Button3.Image = New Bitmap(Application.StartupPath & "\laucher\cony-launcher\icon\dark\joypad.png")
+                Guna2Button4.Image = New Bitmap(Application.StartupPath & "\laucher\cony-launcher\icon\dark\cog.png")
+                Guna2ComboBox1.StartIndex = 2
+
+            Else
+                ' Le fichier ne contient pas "Dark"
+                Panel2.BackColor = Color.WhiteSmoke
+                Me.BackColor = Color.White
+                Label1.ForeColor = Color.Black
+                Guna2Button3.ForeColor = Color.Black
+                Guna2Button4.ForeColor = Color.Black
+                Guna2Button3.Image = New Bitmap(Application.StartupPath & "\laucher\cony-launcher\icon\white\joypad.png")
+                Guna2Button4.Image = New Bitmap(Application.StartupPath & "\laucher\cony-launcher\icon\white\cog.png")
+                Guna2Button1.Image = New Bitmap(Application.StartupPath & "\laucher\cony-launcher\icon\white\end_bar.png")
+                Guna2Button2.Image = New Bitmap(Application.StartupPath & "\laucher\cony-launcher\icon\white\min_bar.png")
+                Guna2ComboBox1.StartIndex = 0
+            End If
+        Else
+            ' Le fichier n'existe pas
+            File.Create(Application.StartupPath & "\laucher\cony-launcher\setting\theme.cony")
+        End If
+
+
+
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
@@ -85,12 +127,12 @@ Public Class Form1
                 Label2.Visible = True
                 GameInstall.Visible = True
                 GamePlay.Visible = False
-                MsgBox("Dow")
+
             Else
                 ' Afficher un message si la version du jeu est égale à la version installée
                 GameInstall.Visible = False
                 GamePlay.Visible = True
-                MsgBox("Up")
+
             End If
         Else
             ' Afficher un message si les fichiers de version sont introuvables
@@ -147,5 +189,30 @@ Public Class Form1
 
 
 
+    End Sub
+
+    Private Sub Guna2ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Guna2ComboBox1.SelectedIndexChanged
+
+
+
+
+    End Sub
+
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+        File.WriteAllText(Application.StartupPath & "\laucher\cony-launcher\setting\theme.cony", Guna2ComboBox1.SelectedItem.ToString())
+        Dim gamePath As String = Application.StartupPath & "\LaucherGame.exe"
+
+        Process.Start(Application.StartupPath & "\LaucherGame.exe")
+        End
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        End
+    End Sub
+
+    Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
+        Settings.Visible = True ' Afficher le panneau des paramètres
+        Game.Visible = False ' Masquer le panneau du jeu
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 End Class
