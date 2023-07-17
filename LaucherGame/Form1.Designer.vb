@@ -235,7 +235,7 @@ Partial Class Form1
         Guna2Button5.ForeColor = Color.White
         Guna2Button5.ImageAlign = HorizontalAlignment.Left
         Guna2Button5.ImageSize = New Size(25, 25)
-        Guna2Button5.Location = New Point(502, 494)
+        Guna2Button5.Location = New Point(502, 493)
         Guna2Button5.Name = "Guna2Button5"
         Guna2Button5.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         Guna2Button5.Size = New Size(223, 53)
